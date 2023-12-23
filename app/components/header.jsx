@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { Children } from 'react'
 import Container from './container'
 import Image from 'next/image'
 import LogoImage from '../../images/logo.webp';
 import { Button } from '@/components/ui/button';
-import { DarkMode, Person2Outlined, Search, ShoppingBagOutlined } from '@mui/icons-material';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import { Search } from '@mui/icons-material';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 
+const IconContainer = ({Children,className}) => {
+     return (
+           <div className={className+' w-[40px] h-[40px] bg-gray-300 rounded-full text-black'}>
+                 {Children}
+           </div>
+     )
+}
 
   
 
@@ -15,7 +24,7 @@ const Header = () => {
             <Image 
             src={LogoImage}
             alt="not found"
-            className='w-[120px] h-[60px]'
+            className='w-[80px] h-[40px] md:w-[120px] md:h-[60px]'
             />
          {/* input serch */}
 
@@ -30,18 +39,22 @@ className=' bg-white text-black border-none outline-none h-[100%] w-[100%] mr-2 
 
 </div>
          {/* serch input end */}
-            <div className="icons">
-            <Button className="bg-orange-300 text-white rounded-full hover:bg-orange-300 hover:opacity-70 mx-3">
-                 <DarkMode/>
-            </Button>
+            <div className="icons flex">
+            
+                 
+            <div className={' w-[40px] h-[40px] bg-gray-100 rounded-full text-black flex justify-center items-center relative'}>
+                      <ShoppingBagOutlinedIcon/>
+                      <small className='bg-orange-300 w-[22px] h-[22px] flex justify-center items-center rounded-full text-white absolute -top-1 -right-2'>
+                         4
+                      </small>
+            </div>
+                 
 
-            <Button className="bg-orange-300 text-white rounded-full hover:bg-orange-300 hover:opacity-70">
-                 <Person2Outlined/>
-            </Button>
+                         <div className={' w-[40px] h-[40px] bg-gray-100 rounded-full text-black flex justify-center items-center mr-3'}>
+                             <PersonAddAltOutlinedIcon/>
+                         </div>
+                 
 
-            <Button className="bg-orange-300 text-white rounded-full hover:bg-orange-300 hover:opacity-70 mx-3">
-                 <ShoppingBagOutlined/>
-            </Button>
 
             
 

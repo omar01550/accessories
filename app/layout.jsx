@@ -20,7 +20,7 @@ const [dark,setDark] = useState(false)
       <body >
         {/* whats app Link */}
 
-<div className="text-white bg-orange-300 rounded-full w-[40px] h-[40px] flex justify-center items-center fixed right-16 bottom-28 cursor-pointer">
+<div className="text-white bg-orange-300 rounded-full w-[40px] h-[40px] flex justify-center items-center fixed right-10 md:right-16 bottom-28 cursor-pointer z-30">
 <WhatsApp />
 </div>
 
