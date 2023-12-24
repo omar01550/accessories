@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { Search } from '@mui/icons-material';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
+import Link from 'next/link';
 
 const IconContainer = ({Children,className}) => {
      return (
@@ -21,11 +22,13 @@ const Header = () => {
   return (
     <header>
          <Container className="flex justify-between items-center py-4 shadow-md">
-            <Image 
-            src={LogoImage}
-            alt="not found"
-            className='w-[80px] h-[40px] md:w-[120px] md:h-[60px]'
-            />
+            <Link href="/">
+                    <Image 
+                    src={LogoImage}
+                    alt="not found"
+                    className='w-[80px] h-[40px] md:w-[120px] md:h-[60px]'
+                    />
+            </Link>
          {/* input serch */}
 
 <div className="hidden md:flex input-search w-[50%] items-center bg-white shadow-sm border-1 border-solid border-gray-700 rounded-md px-3 " >
@@ -42,17 +45,17 @@ className=' bg-white text-black border-none outline-none h-[100%] w-[100%] mr-2 
             <div className="icons flex">
             
                  
-            <div className={' w-[40px] h-[40px] bg-gray-100 rounded-full text-black flex justify-center items-center relative'}>
+            <Link className={' w-[40px] h-[40px] bg-gray-100 rounded-full text-black flex justify-center items-center relative'} href={'/cart'}>
                       <ShoppingBagOutlinedIcon/>
                       <small className='bg-orange-300 w-[22px] h-[22px] flex justify-center items-center rounded-full text-white absolute -top-1 -right-2'>
                          4
                       </small>
-            </div>
+            </Link>
                  
 
-                         <div className={' w-[40px] h-[40px] bg-gray-100 rounded-full text-black flex justify-center items-center mr-3'}>
+                         <Link className={' w-[40px] h-[40px] bg-gray-100 rounded-full text-black flex justify-center items-center mr-3'} href="/login">
                              <PersonAddAltOutlinedIcon/>
-                         </div>
+                         </Link>
                  
 
 
